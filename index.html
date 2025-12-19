@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استخراج متن هوشمند</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4a90e2">
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>استخراج متن از تصویر (Gemini OCR)</h1>
+            <p>تا ۱۵ تصویر همزمان را با هوش مصنوعی به متن تبدیل کنید.</p>
+        </header>
+
+        <!-- API Keys Management -->
+        <section id="api-section">
+            <div class="section-header">
+                <h2>مدیریت کلیدهای API</h2>
+                <button id="add-key-btn" class="btn secondary">افزودن کلید جدید +</button>
+            </div>
+            <div id="keys-container">
+                <!-- API keys will be injected here -->
+            </div>
+        </section>
+
+        <!-- Model Selection -->
+        <section id="model-section">
+            <div class="section-header">
+                <h2>انتخاب مدل</h2>
+                <button id="refresh-models-btn" class="btn small">به‌روزرسانی لیست مدل‌ها</button>
+            </div>
+            <select id="model-select">
+                <option value="gemini-1.5-flash">gemini-1.5-flash (پیش‌فرض)</option>
+            </select>
+        </section>
+
+        <!-- Image Upload Section -->
+        <section id="upload-section">
+            <div class="upload-area" id="drop-zone">
+                <input type="file" id="file-input" multiple accept="image/*" hidden>
+                <div class="upload-icon">📸</div>
+                <p>تصاویر خود را اینجا رها کنید یا کلیک کنید (حداکثر ۱۵ عدد)</p>
+            </div>
+            <div id="preview-container" class="preview-grid">
+                <!-- Image previews will be injected here -->
+            </div>
+        </section>
+
+        <!-- Action Button -->
+        <div class="actions">
+            <button id="process-btn" class="btn primary" disabled>شروع استخراج متن</button>
+        </div>
+
+        <!-- Results Section -->
+        <section id="results-section">
+            <div class="section-header">
+                <h2>نتایج استخراج</h2>
+                <button id="copy-all-btn" class="btn small" style="background: #34495e; color: white;">کپی همه نتایج</button>
+            </div>
+            <div id="status-message"></div>
+            <div id="results-container">
+                <!-- OCR results will be injected here -->
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js');
+            });
+        }
+    </script>
+</body>
+</html>

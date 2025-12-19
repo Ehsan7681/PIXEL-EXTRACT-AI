@@ -1,0 +1,23 @@
+{
+  "name": "استخراج متن هوشمند",
+  "short_name": "OCR هوشمند",
+  "description": "استخراج متن از تصاویر با هوش مصنوعی جمینی",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f5f7fa",
+  "theme_color": "#4a90e2",
+  "dir": "rtl",
+  "lang": "fa",
+  "icons": [
+    {
+      "src": "icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

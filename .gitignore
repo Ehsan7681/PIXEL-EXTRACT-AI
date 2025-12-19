@@ -1,0 +1,11 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# API Keys (Optional if they were in a file, but here they are in LocalStorage)
+# However, if user adds a config file later, it should be ignored.
+config.js
+
+# Node modules if user decides to use npm later
+node_modules/
+dist/
